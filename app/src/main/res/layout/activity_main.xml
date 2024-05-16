@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/android"
+    >
+    <EditText
+        android:id="@+id/valorEntrada"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
+        android:hint="Ingrese valor en metros"
+        android:textColor="@color/white"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        tools:ignore="Autofill,HardcodedText,TextContrastCheck,VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/convertirAKilometrosButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="onClickConvertir"
+        android:text="Kilómetros"
+        app:layout_constraintEnd_toStartOf="@+id/convertirACentimetrosButton"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valorEntrada" />
+
+    <Button
+        android:id="@+id/convertirACentimetrosButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="onClickConvertir"
+        android:text="Centímetros"
+        app:layout_constraintEnd_toStartOf="@+id/convertirAMilimetrosButton"
+        app:layout_constraintStart_toEndOf="@+id/convertirAKilometrosButton"
+        app:layout_constraintTop_toBottomOf="@+id/valorEntrada"
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
+    <Button
+        android:id="@+id/convertirAMilimetrosButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="onClickConvertir"
+        android:text="Milímetros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/convertirACentimetrosButton"
+        app:layout_constraintTop_toBottomOf="@+id/valorEntrada"
+        tools:ignore="HardcodedText,TextViewEdits,VisualLintButtonSize" />
+
+    <EditText
+        android:id="@+id/valorSalida"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Resultado"
+        android:textColorHint="@color/white"
+        android:minWidth="200dp"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convertirAMilimetrosButton"
+        app:layout_constraintVertical_bias="0.105"
+        tools:ignore="Autofill,HardcodedText,TextFields,VisualLintTextFieldSize" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
