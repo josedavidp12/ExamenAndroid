@@ -15,10 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
-
     fun onClickConvertidor(view: View) {
         val Entrada = binding.Label.text.toString().toDoubleOrNull() ?: return
-
         val resultado = when (view.id) {
             R.id.KilometrosButton -> convertirKm(Entrada)
             R.id.CentimetrosButton -> convertirCm(Entrada)
@@ -26,18 +24,14 @@ class MainActivity : AppCompatActivity() {
             R.id.DecametrosButton -> convertirDm(Entrada)
             else -> return
         }
-
         binding.valorSalida.setText(resultado.toString())
     }
-
     private fun convertirKm(valorMetros: Double): Double {
         return valorMetros / 1000.0
     }
-
     private fun convertirCm(valorMetros: Double): Double {
         return valorMetros * 100.0
     }
-
     private fun convertirMl(valorMetros: Double): Double {
         return valorMetros * 1000.0
     }
