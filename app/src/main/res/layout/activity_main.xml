@@ -8,7 +8,7 @@
     android:background="@drawable/android"
     >
     <EditText
-        android:id="@+id/valorEntrada"
+        android:id="@+id/Label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColorHint="@color/white"
@@ -23,38 +23,54 @@
         tools:ignore="Autofill,HardcodedText,TextContrastCheck,VisualLintTextFieldSize" />
 
     <Button
-        android:id="@+id/convertirAKilometrosButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/KilometrosButton"
+        android:layout_width="118dp"
+        android:layout_height="49dp"
         android:layout_marginTop="24dp"
-        android:onClick="onClickConvertir"
+        android:onClick="onClickConvertidor"
         android:text="Kilómetros"
-        app:layout_constraintEnd_toStartOf="@+id/convertirACentimetrosButton"
+        app:layout_constraintEnd_toStartOf="@+id/CentimetrosButton"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valorEntrada" />
+        app:layout_constraintTop_toBottomOf="@+id/Label" />
 
     <Button
-        android:id="@+id/convertirACentimetrosButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/CentimetrosButton"
+        android:layout_width="127dp"
+        android:layout_height="45dp"
         android:layout_marginTop="24dp"
-        android:onClick="onClickConvertir"
+        android:onClick="onClickConvertidor"
         android:text="Centímetros"
-        app:layout_constraintEnd_toStartOf="@+id/convertirAMilimetrosButton"
-        app:layout_constraintStart_toEndOf="@+id/convertirAKilometrosButton"
-        app:layout_constraintTop_toBottomOf="@+id/valorEntrada"
+        app:layout_constraintEnd_toStartOf="@+id/MilimetrosButton"
+        app:layout_constraintStart_toEndOf="@+id/KilometrosButton"
+        app:layout_constraintTop_toBottomOf="@+id/Label"
         tools:ignore="HardcodedText,VisualLintButtonSize" />
+
     <Button
-        android:id="@+id/convertirAMilimetrosButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/MilimetrosButton"
+        android:layout_width="118dp"
+        android:layout_height="49dp"
         android:layout_marginTop="24dp"
-        android:onClick="onClickConvertir"
+        android:onClick="onClickConvertidor"
         android:text="Milímetros"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/convertirACentimetrosButton"
-        app:layout_constraintTop_toBottomOf="@+id/valorEntrada"
+        app:layout_constraintStart_toEndOf="@+id/CentimetrosButton"
+        app:layout_constraintTop_toBottomOf="@+id/Label"
+        tools:ignore="HardcodedText,TextViewEdits,VisualLintButtonSize" />
+
+
+    <Button
+        android:id="@+id/DecametrosButton"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="-120dp"
+        android:onClick="onClickConvertidor"
+        android:text="Decametros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/CentimetrosButton"
+        app:layout_constraintTop_toBottomOf="@+id/Label"
         tools:ignore="HardcodedText,TextViewEdits,VisualLintButtonSize" />
 
     <EditText
@@ -62,16 +78,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Resultado"
-        android:textColorHint="@color/white"
         android:minWidth="200dp"
         android:minHeight="48dp"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/convertirAMilimetrosButton"
-        app:layout_constraintVertical_bias="0.105"
+        app:layout_constraintTop_toBottomOf="@+id/MilimetrosButton"
+        app:layout_constraintVertical_bias="0.169"
         tools:ignore="Autofill,HardcodedText,TextFields,VisualLintTextFieldSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

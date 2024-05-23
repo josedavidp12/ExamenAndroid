@@ -9,7 +9,6 @@ import com.kevin.examen.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,28 +16,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    fun onClickConvertir(view: View) {
-        val valorEntrada = binding.valorEntrada.text.toString().toDoubleOrNull() ?: return
+    fun onClickConvertidor(view: View) {
+        val Entrada = binding.Label.text.toString().toDoubleOrNull() ?: return
 
         val resultado = when (view.id) {
-            R.id.convertirAKilometrosButton -> convertirAKilometros(valorEntrada)
-            R.id.convertirACentimetrosButton -> convertirACentimetros(valorEntrada)
-            R.id.convertirAMilimetrosButton -> convertirAMilimetros(valorEntrada)
+            R.id.KilometrosButton -> convertirKm(Entrada)
+            R.id.CentimetrosButton -> convertirCm(Entrada)
+            R.id.MilimetrosButton -> convertirMl(Entrada)
+            R.id.DecametrosButton -> convertirDm(Entrada)
             else -> return
         }
 
         binding.valorSalida.setText(resultado.toString())
     }
 
-    private fun convertirAKilometros(valorMetros: Double): Double {
+    private fun convertirKm(valorMetros: Double): Double {
         return valorMetros / 1000.0
     }
 
-    private fun convertirACentimetros(valorMetros: Double): Double {
+    private fun convertirCm(valorMetros: Double): Double {
         return valorMetros * 100.0
     }
 
-    private fun convertirAMilimetros(valorMetros: Double): Double {
+    private fun convertirMl(valorMetros: Double): Double {
         return valorMetros * 1000.0
+    }
+    private fun convertirDm(valorMetros: Double): Double {
+        return valorMetros * 0.1
     }
 }
